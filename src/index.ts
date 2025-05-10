@@ -56,7 +56,6 @@ async function addNewSlice(invokedUri?: vscode.Uri) {
 					selectedLayer = alias.replace(/[@/*]/g, ''); // Extract layer name from alias e.g. @features/* -> features
 					basePath = absoluteLayerPath;
 					layerFound = true;
-					vscode.window.showInformationMessage(`Detected FSD Layer: ${selectedLayer}`);
 					break;
 				}
 			}
