@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# TypeScript
+*.tsbuildinfo
+out/
+
+# VS Code Extension
+.vscode/
+.vscode-test/
+*.vsix
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs
+*.log.*

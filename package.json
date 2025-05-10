@@ -1,0 +1,52 @@
+{
+  "name": "fsd-vscode-extension",
+  "displayName": "FSD VSCode Extension",
+  "description": "A VS Code extension for FSD.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/index.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fsd-vscode-extension.addNewSlice",
+        "title": "FSD: Add New Slice (Command Palette)"
+      },
+      {
+        "command": "fsd-vscode-extension.addNewSliceFromExplorer",
+        "title": "FSD: Create New Slice Here"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "fsd-vscode-extension.addNewSliceFromExplorer",
+          "when": "explorerResourceIsFolder && resourceFilename =~ /^(app|pages|widgets|features|entities|shared)$/",
+          "group": "navigation@5"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "biome lint ./src",
+    "format": "biome format --write ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}
